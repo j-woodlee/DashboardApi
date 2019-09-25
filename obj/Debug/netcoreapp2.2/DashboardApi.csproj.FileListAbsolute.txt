@@ -1,0 +1,14 @@
+C:\Users\RCP-Developer\Documents\DashboardApi\bin\Debug\netcoreapp2.2\DashboardApi.deps.json
+C:\Users\RCP-Developer\Documents\DashboardApi\bin\Debug\netcoreapp2.2\DashboardApi.runtimeconfig.json
+C:\Users\RCP-Developer\Documents\DashboardApi\bin\Debug\netcoreapp2.2\DashboardApi.runtimeconfig.dev.json
+C:\Users\RCP-Developer\Documents\DashboardApi\bin\Debug\netcoreapp2.2\DashboardApi.dll
+C:\Users\RCP-Developer\Documents\DashboardApi\bin\Debug\netcoreapp2.2\DashboardApi.pdb
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.csprojAssemblyReference.cache
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.csproj.CoreCompileInputs.cache
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.RazorAssemblyInfo.cache
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.RazorAssemblyInfo.cs
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.AssemblyInfoInputs.cache
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.AssemblyInfo.cs
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.RazorTargetAssemblyInfo.cache
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.dll
+C:\Users\RCP-Developer\Documents\DashboardApi\obj\Debug\netcoreapp2.2\DashboardApi.pdb
