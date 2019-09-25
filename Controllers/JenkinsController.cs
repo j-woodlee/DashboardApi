@@ -17,12 +17,11 @@ namespace DashboardApi.Controllers {
         public ActionResult<List<Jenkins>> Get() =>
             this._jenkinsService.Get();
 
-        [HttpGet("{id:length(24)}", Name = "GetJenkins")]
-        public ActionResult<Jenkins> Get(string id) {
-            var jenkins = this._jenkinsService.Get(id);
+        [HttpGet("{projectName:length(4)}", Name = "GetJenkins")]
+        public ActionResult<Jenkins> Get(string projectName) {
+            var jenkins = this._jenkinsService.Get(projectName);
 
-            if (jenkins == null)
-            {
+            if (jenkins == null) {
                 return NotFound();
             }
 
@@ -33,31 +32,31 @@ namespace DashboardApi.Controllers {
         public ActionResult<Jenkins> Create(Jenkins jenkins) {
             this._jenkinsService.Create(jenkins);
 
-            return CreatedAtRoute("GetJenkins", new { id = jenkins.Id.ToString() }, jenkins);
+            return CreatedAtRoute("GetJenkins", new { projectName = jenkins.ProjectName.ToString() }, jenkins);
         }
 
-        [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Jenkins jenkinsIn) {
-            var jenkins = this._jenkinsService.Get(id);
+        [HttpPut("{projectName:length(4)}")]
+        public IActionResult Update(string projectName, Jenkins jenkinsIn) {
+            var jenkins = this._jenkinsService.Get(projectName);
 
             if (jenkins == null) {
                 return NotFound();
             }
 
-            this._jenkinsService.Update(id, jenkinsIn);
+            this._jenkinsService.Update(projectName, jenkinsIn);
 
             return NoContent();
         }
 
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id) {
-            var jenkins = this._jenkinsService.Get(id);
+        [HttpDelete("{projectName:length(4)}")]
+        public IActionResult Delete(string projectName) {
+            var jenkins = this._jenkinsService.Get(projectName);
 
             if (jenkins == null) {
                 return NotFound();
             }
 
-            this._jenkinsService.Remove(jenkins.Id);
+            this._jenkinsService.Remove(jenkins.ProjectName);
 
             return NoContent();
         }
