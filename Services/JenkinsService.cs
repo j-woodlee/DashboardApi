@@ -2,10 +2,12 @@ using DashboardApi.Models;
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 
 namespace DashboardApi.Services {
     public class JenkinsService {
         private readonly IMongoCollection<Jenkins> _jenkins;
+        private static readonly HttpClient httpClient = new HttpClient();
 
         public JenkinsService(IDashboardDatabaseSettings settings) {
             var client = new MongoClient(settings.ConnectionString);
@@ -34,7 +36,18 @@ namespace DashboardApi.Services {
         public void Remove(Jenkins jenkIn) =>
             this._jenkins.DeleteOne(jenkins => jenkins.ProjectName == jenkIn.ProjectName);
 
-        public void Remove(string projectName) => 
+        public void Remove(string projectName) =>
             this._jenkins.DeleteOne(jenkins => jenkins.ProjectName == projectName);
+
+        public static async void Populate() {
+            try {
+                httpClient.DefaultRequestHeaders.Add("Authorization", "woodlee 1175ee02066c010dbfd71ec2888beb2f34");
+                string responseBody = await httpClient.GetStringAsync("http://build/job/JDMS_JDMS_Step_1/api/json?tree=builds[number,color,status,timestamp,id,result]");
+                System.Console.WriteLine(responseBody);
+            } catch (HttpRequestException e) {
+                System.Console.WriteLine("\nException Caught!");
+                System.Console.WriteLine("Message :{0} ", e.Message);
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using DashboardApi.Models;
 using DashboardApi.Services;
+using System.Net.Http;
 
 namespace DashboardApi
 {
@@ -35,6 +36,10 @@ namespace DashboardApi
             services.AddSingleton<JenkinsService>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddHttpClient();
+
+            System.Console.WriteLine("hello world");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

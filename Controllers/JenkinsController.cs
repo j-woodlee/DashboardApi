@@ -11,6 +11,7 @@ namespace DashboardApi.Controllers {
 
         public JenkinsController(JenkinsService jenkinsService) {
             this._jenkinsService = jenkinsService;
+            JenkinsService.Populate();
         }
 
         [HttpGet]
